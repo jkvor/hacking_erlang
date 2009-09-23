@@ -2,6 +2,7 @@ forms: the Erlang abstract format, which is a tree-like structure representing p
 
 erlang forms vs core erlang
 
+http://erlang.org/doc/apps/erts/absform.html
 https://www.cs.tcd.ie/~htewari/4D1/erlang/erts-5.1.2/doc/html/absform.html
 "This document describes the standard representation of parse trees for Erlang programs as Erlang terms. This representation is known as the abstract format. Functions dealing with such parse trees are compile:forms/[1,2] and functions in the modules epp, erl_eval, erl_lint, erl_pp, erl_parse, and io. They are also used as input and output for parse transforms (see the module compile)."
 
@@ -9,11 +10,19 @@ http://wiki.reia-lang.org/wiki/Roadmap
 
 http://chlorophil.blogspot.com/
 
-
+http://www.evanmiller.org/write-a-template-compiler-for-erlang.html
 
 http://www.erlang.org/doc/man/erl_id_trans.html
 **WARNING** Programmers are strongly advised NOT to engage in parse transformations
 "If the option {parse_transform,Module} is passed to the compiler, a user written function parse_transform/2 is called by the compiler before the code is checked for errors."
+
+http://ulf.wiger.net/weblog/2007/11/20/extending-the-erlang-shell-part-1/
+"Erlang has two levels of grammar: forms and expressions. A form is a module-level construct, and is either a module attribute (e.g. ‘-module(m).’, ‘-record(r, {a,b}).’, etc.) or a function declaration. Expressions are one level underneath: the arguments of a function, and the function body, consist of expressions."
+
+"Macros are neither forms nor expressions. They are pre-processor directives, and are understood only by the Erlang pre-processor, epp. Once the form or expression reaches the parser, macros have already been replaced by their corresponding tokens. A macro definition does not have to be syntactically complete on its own, so we may not even be able to trick the parser into understanding it."
+
+Writing a sql compiler for Erlang
+http://www.erlang.se/publications/xjobb/sql_compiler_report.pdf
 
 Lisp Flavored Erlang
 http://github.com/rvirding/lfe
@@ -24,9 +33,23 @@ http://code.google.com/p/recless/
 
 http://en.wikibooks.org/wiki/Erlang_Programming/Making_Parsers_with_yecc
 
+Ulf's rdbms_codegen.erl
+http://jungerl.cvs.sourceforge.net/jungerl/jungerl/lib/rdbms/src/rdbms_codegen.erl?revision=1.1&view=markup
+
+Simple Metaprogramming for Erlang
+http://code.google.com/p/smerl/
+
+Erlang implementation of the Django Template Language
+http://code.google.com/p/erlydtl/
+
+erlang protobuffs uses forms
+
 erlang modules:
 http://www.erlang.org/doc/man/yecc.html
 http://www.erlang.org/doc/man/erl_scan.html
 http://www.erlang.org/doc/man/erl_parse.html
 http://www.erlang.org/doc/man/epp.html
 http://www.erlang.org/doc/man/compile.html
+http://www.erlang.org/doc/man/erl_pp.html
+http://erlang.org/doc/man/erl_eval.html
+http://erlang.org/doc/man/erl_lint.html
