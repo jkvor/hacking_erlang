@@ -42,6 +42,5 @@ The preprocessing step in Erlang code compilation is largely undocumented, but v
 
 #### abstract code manipulation
 
-
 * recless
 * excavator
