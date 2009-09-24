@@ -12,27 +12,36 @@ The preprocessing step in Erlang code compilation is largely undocumented, but v
 
 ### Breakdown of Erlang compilation steps
 
+
 * scan source file into tokens (erl_scan)
 * parse tokens into forms (erl_parse)
 * compile forms into byte code (compile)
 
+
 #### overview of forms structures
+
 #### parse_transform and custom_guards
+
 #### example of manual compilation process and dynamic_compile module
 
 #### reverse engineering byte code
 
+
 * code:get_object_code/1, erl_pp
 * erlang_protobuffs
+
 
 ### Meta programming
 
 #### Making custom parsers with Yecc
 
+
 * LFE
 * Django Template Language
 
+
 #### abstract code manipulation
+
 
 * recless
 * excavator
