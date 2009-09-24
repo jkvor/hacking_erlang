@@ -6,8 +6,8 @@ The preprocessing step in Erlang code compilation is largely undocumented, but v
 * Reverse engineering compiled BEAM code into forms
 * Preprocessing vs macros
 * The parse_transform compile directive and example usages like:
-* adding helper functions into modules that take advantage of record definitions that aren't available at runtime
-* performing data integrity checks by expanding custom guards into additional function clauses
+	* adding helper functions into modules that take advantage of record definitions that aren't available at runtime
+	* performing data integrity checks by expanding custom guards into additional function clauses
 * Example usages of the custom_guards, dynamic_compile and excavator projects in production environments at EA
 
 ### Breakdown of Erlang compilation steps
