@@ -211,7 +211,7 @@ yeccpars2(Other, _, _, _, _, _, _) ->
 yeccpars2_0(S, '(', Ss, Stack, T, Ts, Tzr) ->
  yeccpars1(S, 2, Ss, Stack, T, Ts, Tzr).
 
-yeccpars2_1(_S, '$end', _Ss, Stack,  _T, _Ts, _Tzr) ->
+yeccpars2_1(_S, dot, _Ss, Stack,  _T, _Ts, _Tzr) ->
  {ok, hd(Stack)}.
 
 yeccpars2_2(S, '(', Ss, Stack, T, Ts, Tzr) ->
