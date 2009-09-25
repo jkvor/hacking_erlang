@@ -8,9 +8,14 @@ main(_) ->
 		-compile(export_all).
 		
 		hello() -> \"Hello Stockholm!\".
+		
+		goodbye() ->
+			[A || A <- lists:seq(1,10)].
+			
 		",
 
 	Forms = to_forms([], Str, 0, []),
+	io:format("~p~n", [Forms]),
 	{ok, Mod, Bin} = compile:forms(Forms, []),
 	code:load_binary(Mod, "compiled_from_string.erl", Bin),
 	io:format("~s~n", [foo:hello()]),
