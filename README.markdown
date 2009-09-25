@@ -24,6 +24,9 @@ The preprocessing step in Erlang code compilation is largely undocumented, but v
 
 #### example of manual compilation process and dynamic_compile module
 
+* dynamic logging in excavator and ejabberd
+* module level logging with log_roller
+
 #### reverse engineering byte code
 
 
