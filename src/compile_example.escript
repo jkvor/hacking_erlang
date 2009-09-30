@@ -4,10 +4,10 @@
 
 main(_) ->
 	Str = "
-		-module(foo).
-		-compile(export_all).
+		-module(example1).
+		-export([foo/0]).
 		
-		hello() -> \"Hello Stockholm!\".
+		foo() -> \"Hello Stockholm!\".
 		
 		goodbye() ->
 			[A || A <- lists:seq(1,10)].
