@@ -7,12 +7,7 @@ main(_) ->
 		-module(example1).
 		-export([foo/0]).
 		
-		foo() -> \"Hello Stockholm!\".
-		
-		goodbye() ->
-			[A || A <- lists:seq(1,10)].
-			
-		",
+		foo() -> \"Hello Stockholm!\". ",
 
 	Forms = to_forms([], Str, 0, []),
 	io:format("~p~n", [Forms]),
