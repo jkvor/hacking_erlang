@@ -6,7 +6,7 @@ main(_) ->
 	Str = "
 		-module(example1).
 		-export([foo/0]).
-		
+		-define(STUPID(A, V), [B || B <- lists:append(A,V)]).
 		foo() -> \"Hello Stockholm!\". ",
 
 	Forms = to_forms([], Str, 0, []),
@@ -20,8 +20,10 @@ main(_) ->
 to_forms(Cont, Str, StartLoc, Acc) ->
 	case erl_scan:tokens(Cont, Str, StartLoc) of
 		{done, {ok, Tokens, EndLocation}, LeftOverChars} ->
+			io:format("token ~p~n", [Tokens]),
 			{ok, Form} = erl_parse:parse_form(Tokens),
 			to_forms([], LeftOverChars, EndLocation, [Form|Acc]);
-		_ ->
+		Other ->
+			io:format("other ~p~n", [Other]),
 			lists:reverse(Acc)
 	end.
