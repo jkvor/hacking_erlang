@@ -9,25 +9,12 @@ record_to_proplist(Rec) when is_tuple(Rec) ->
 	FieldNames = expanded_record_fields(RecName),
 	lists:zip(FieldNames, Fields).
 
-
-record_to_proplist(Rec) when is_tuple(Rec) ->
-	case Rec of
-		Pizza when is_record(Pizza, pizza) ->
-			[{size, Pizza#pizza.size},
-			 {toppings, Pizza#pizza.toppings},
-			 {price, Pizza#pizza.price}];
-		_ ->
-			exit(wtf_do_i_do_with_this)
-	end.
-
-#pizza{
-	size = "large",
-	toppings = ["onions", "peppers", "olives"],
-	price = "$14.99"
-}
-
-
-[{size, "large"},
- {toppings, ["onions", "peppers", "olives"]},
- {price, "$14.99"}]
-
+% record_to_proplist(Rec) when is_tuple(Rec) ->
+% 	case Rec of
+% 		Pizza when is_record(Pizza, pizza) ->
+% 			[{size, Pizza#pizza.size},
+% 			 {toppings, Pizza#pizza.toppings},
+% 			 {price, Pizza#pizza.price}];
+% 		_ ->
+% 			exit(wtf_do_i_do_with_this)
+% 	end.
